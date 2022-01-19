@@ -93,8 +93,8 @@
 //     }
 // }
 
-using Collectionfunction;
+// using Collectionfunction;
 
-// Initialize Collection class
-Collection collect = new Collection();
-collect.CollectionMain();
+// // Initialize Collection class
+// Collection collect = new Collection();
+// collect.CollectionMain();
