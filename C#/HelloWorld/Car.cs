@@ -24,6 +24,14 @@ namespace CarFunction
         
         public int Fuel { get; set; }
 
+        public Car(){
+
+            _color = "Blue";
+            _gallonPerMile = 10;
+            _owner = "No owner";
+            Fuel = 100;
+        }
+
         // Method
         public void Start(){
 
@@ -36,6 +44,11 @@ namespace CarFunction
             Fuel = p_fuel;
             Console.WriteLine("The car is starting up");
             Console.WriteLine($"Current fuel: {Fuel}");
+        }
+
+        public double TotalRange(){
+
+            return (double) Fuel/_gallonPerMile;
         }
 
     }
