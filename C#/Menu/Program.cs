@@ -1,8 +1,8 @@
-﻿// See https://aka.ms/new-console-template for more information
+// See https://aka.ms/new-console-template for more information
 using Menufunction;
 
 Console.Clear();
-Console.WriteLine("Welcome user!");
+Console.WriteLine("Welcome To Our Budget Tracking Helper!");
 Console.WriteLine("What is your name?");
 
 Menu user1 = new Menu();
@@ -12,16 +12,20 @@ bool repeat = true;
 
 Console.WriteLine("");
 
+Console.WriteLine("Loading previous saved state...");
+user1.loadData();
+
+
 
 while (repeat){
-    Console.WriteLine($"Hello {user1.Name}, what calculation or task would you like to do today?");
-    Console.WriteLine("Type 1 for addition");
-    Console.WriteLine("Type 2 for subtraction");
-    Console.WriteLine("Type 3 for multiplication");
-    Console.WriteLine("Type 4 for division");
-    Console.WriteLine("Type 5 to find a total");
-    Console.WriteLine("Type 6 to find and delete a total");
-    Console.WriteLine("Type 7 to exit program");
+    Console.WriteLine($"Hello {user1.Name}, what would you like to do today?");
+    Console.WriteLine("Type 1 to add a new date (MM-DD-YYYY)");
+    Console.WriteLine("Type 2 to add onto daily expenses for the current date");
+    Console.WriteLine("Type 3 to subtract from expenses for current date");
+    Console.WriteLine("Type 4 to print current date expenses");
+    Console.WriteLine("Type 5 to print an specific date");
+    Console.WriteLine("Type 6 to print all dates being tracked");
+    Console.WriteLine("Type 7 to exit program and save all changes");
 
     int userInput = Convert.ToInt32(Console.ReadLine());
     double total;
@@ -29,67 +33,57 @@ while (repeat){
 
     if (userInput == 1){
         
-        Console.WriteLine("What two numbers would you like to add?");
-        int num1 = Convert.ToInt32(Console.ReadLine());
-        int num2 = Convert.ToInt32(Console.ReadLine());
-        total = num1+num2;
+        Console.WriteLine("Enter the date you would like to add (MM-DD-YYYY)");
+        string currDate = Console.ReadLine();
 
-        user1.CalcStatement(total);
+        user1.addNewDate(currDate);
 
         Console.WriteLine("Press ENTER to continue");
         Console.ReadLine();
 
     } else if (userInput == 2){
-        Console.WriteLine("What two numbers would you like to subtract?");
-        int num1 = Convert.ToInt32(Console.ReadLine());
-        int num2 = Convert.ToInt32(Console.ReadLine());
-        total = num1-num2;
+        Console.WriteLine("Enter the amount you would like to add");
+        double amount = Convert.ToDouble(Console.ReadLine());
 
-        user1.CalcStatement(total);
+        user1.addAmount(amount);
 
         Console.WriteLine("Press ENTER to continue");
         Console.ReadLine();
 
     } else if (userInput == 3){
-        Console.WriteLine("What two numbers would you like to multiply?");
-        int num1 = Convert.ToInt32(Console.ReadLine());
-        int num2 = Convert.ToInt32(Console.ReadLine());
-        total = num1*num2;
+        Console.WriteLine("Enter the amount you would like to subtract");
+        double amount = Convert.ToDouble(Console.ReadLine());
 
-        user1.CalcStatement(total);
+        user1.addAmount(amount);
 
         Console.WriteLine("Press ENTER to continue");
         Console.ReadLine();
 
     } else if (userInput == 4){
-        Console.WriteLine("What two numbers would you like to divide");
-        int num1 = Convert.ToInt32(Console.ReadLine());
-        int num2 = Convert.ToInt32(Console.ReadLine());
-        total = num1/num2;
-
-        user1.CalcStatement(total);
+        user1.printCurrExpense();
 
         Console.WriteLine("Press ENTER to continue");
         Console.ReadLine();
 
     } else if (userInput == 5){
-        Console.WriteLine("What total would you like to check if it exists?");
-        double findTotal = Convert.ToDouble(Console.ReadLine());
-        user1.FindTotal(findTotal);
+        Console.WriteLine("Enter date to print (MM-DD-YYYY)");
+        string date = Console.ReadLine();
+        user1.printSpecificDate(date);
 
         Console.WriteLine("Press ENTER to continue");
         Console.ReadLine();
 
     } else if (userInput == 6){
-        Console.WriteLine("What total would you like to remove from list?");
-        double removeTotal = Convert.ToDouble(Console.ReadLine());
-        user1.RemoveTotal(removeTotal);
+        user1.printAllDates();
+    
 
         Console.WriteLine("Press ENTER to continue");
         Console.ReadLine();
 
     } else if (userInput == 7){
-        Console.WriteLine("Thanks for using our calculator. Goodbye!");
+        Console.WriteLine("Thanks For Using Our Budget Tracking Helper");
+        Console.WriteLine("All changes will now be saved...");
+        user1.saveChanges();
         repeat = false;
 
     } else{

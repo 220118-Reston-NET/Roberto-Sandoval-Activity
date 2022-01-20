@@ -1,57 +1,41 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-// Include car class
-// using CarFunction;
-
-// Console.WriteLine("Hello, World!");
-
-// // Initialize an object
-// Car car1 = new Car();
-
-// Console.WriteLine(car1.Color);
-// car1.Color = "Red";
-// Console.WriteLine(car1.Color);
-// car1.Fuel = 10;
-// Console.WriteLine(car1.Fuel);
-// car1.Start();
-// car1.Start(100);
-
-// // Another way of initializing an object
-// Car car2 = new Car(){
-
-//     Color = "Yellow",
-//     Fuel = 1000,
-//     Owner = "Me"
-
-// };
-
-// Console.WriteLine(car2.Color);
-// Console.WireteLine(car2.TotalRange());
+﻿// // See https://aka.ms/new-console-template for more information
+// using Menufunction;
 
 // Console.Clear();
 // Console.WriteLine("Welcome user!");
 // Console.WriteLine("What is your name?");
 
-// string name = Console.ReadLine();
+// Menu user1 = new Menu();
+
+// user1.Name = Console.ReadLine();
 // bool repeat = true;
 
+// Console.WriteLine("");
+
+
 // while (repeat){
-//     Console.WriteLine($"Hello {name}, what calculation would you like to do today?");
+//     Console.WriteLine($"Hello {user1.Name}, what calculation or task would you like to do today?");
 //     Console.WriteLine("Type 1 for addition");
 //     Console.WriteLine("Type 2 for subtraction");
 //     Console.WriteLine("Type 3 for multiplication");
 //     Console.WriteLine("Type 4 for division");
-//     Console.WriteLine("Type 5 to exit program");
+//     Console.WriteLine("Type 5 to find a total");
+//     Console.WriteLine("Type 6 to find and delete a total");
+//     Console.WriteLine("Type 7 to exit program");
 
 //     int userInput = Convert.ToInt32(Console.ReadLine());
+//     double total;
+//     //bool add;
 
 //     if (userInput == 1){
         
 //         Console.WriteLine("What two numbers would you like to add?");
 //         int num1 = Convert.ToInt32(Console.ReadLine());
 //         int num2 = Convert.ToInt32(Console.ReadLine());
+//         total = num1+num2;
 
-//         Console.WriteLine($"The result is: {num1+num2}");
+//         user1.CalcStatement(total);
+
 //         Console.WriteLine("Press ENTER to continue");
 //         Console.ReadLine();
 
@@ -59,8 +43,10 @@
 //         Console.WriteLine("What two numbers would you like to subtract?");
 //         int num1 = Convert.ToInt32(Console.ReadLine());
 //         int num2 = Convert.ToInt32(Console.ReadLine());
+//         total = num1-num2;
 
-//         Console.WriteLine($"The result is: {num1-num2}");
+//         user1.CalcStatement(total);
+
 //         Console.WriteLine("Press ENTER to continue");
 //         Console.ReadLine();
 
@@ -68,8 +54,10 @@
 //         Console.WriteLine("What two numbers would you like to multiply?");
 //         int num1 = Convert.ToInt32(Console.ReadLine());
 //         int num2 = Convert.ToInt32(Console.ReadLine());
+//         total = num1*num2;
 
-//         Console.WriteLine($"The result is: {num1*num2}");
+//         user1.CalcStatement(total);
+
 //         Console.WriteLine("Press ENTER to continue");
 //         Console.ReadLine();
 
@@ -77,12 +65,30 @@
 //         Console.WriteLine("What two numbers would you like to divide");
 //         int num1 = Convert.ToInt32(Console.ReadLine());
 //         int num2 = Convert.ToInt32(Console.ReadLine());
+//         total = num1/num2;
 
-//         Console.WriteLine($"The result is: {num1/num2}");
+//         user1.CalcStatement(total);
+
 //         Console.WriteLine("Press ENTER to continue");
 //         Console.ReadLine();
 
 //     } else if (userInput == 5){
+//         Console.WriteLine("What total would you like to check if it exists?");
+//         double findTotal = Convert.ToDouble(Console.ReadLine());
+//         user1.FindTotal(findTotal);
+
+//         Console.WriteLine("Press ENTER to continue");
+//         Console.ReadLine();
+
+//     } else if (userInput == 6){
+//         Console.WriteLine("What total would you like to remove from list?");
+//         double removeTotal = Convert.ToDouble(Console.ReadLine());
+//         user1.RemoveTotal(removeTotal);
+
+//         Console.WriteLine("Press ENTER to continue");
+//         Console.ReadLine();
+
+//     } else if (userInput == 7){
 //         Console.WriteLine("Thanks for using our calculator. Goodbye!");
 //         repeat = false;
 
@@ -90,14 +96,5 @@
 //         Console.WriteLine("You have entered an incorrect option");
 //         Console.WriteLine("Press ENTER to continue");
 //         Console.ReadLine();
-//     }
+//     } 
 // }
-
-using Collectionfunction;
-using SerializationFunction;
-
-// // Initialize Collection class
-// Collection collect = new Collection();
-// collect.CollectionMain();
-
-Serialization.SerialMain();
