@@ -1,10 +1,12 @@
+using System.Collections;
+
 namespace Collectionfunction{
     public class Collection
     {
         // Array initialization
         private int[] _nums = new int[5];
 
-        // Generic Collection
+        // Generic Collection --------
         // List (No set size, specific data type, zero based index)
         private List<string> strings = new List<string>();
 
@@ -15,7 +17,9 @@ namespace Collectionfunction{
         private Dictionary<string,int> _directory = new Dictionary<string, int>();
 
 
-        // Non-generic Collection
+        // Non-generic Collection -------
+        // ArrayList (can use different data types, can be indexed)
+        private ArrayList _nonGeneric = new ArrayList();
 
         public void CollectionMain(){
 
@@ -25,7 +29,7 @@ namespace Collectionfunction{
             _nums[1] = 10;
             _nums[2] = 4;
 
-            // Looing through the array
+            // Looping through the array
             Console.WriteLine("--- Foreach Loop ---");
 
             foreach (int num in _nums){
@@ -72,6 +76,15 @@ namespace Collectionfunction{
 
             Console.WriteLine(_directory["Name2"]);
             Console.WriteLine(_directory["Name3"]);
+
+            Console.WriteLine("--- Non-generic Collection ---");
+
+            Console.WriteLine("ArrayList");
+
+            _nonGeneric.Add("Name");
+            _nonGeneric.Add(10);
+            _nonGeneric.Add(true);
+            _nonGeneric.Add(10.70);
         }
     }
 }
