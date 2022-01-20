@@ -9,6 +9,8 @@ Menu user1 = new Menu();
 user1.Name = Console.ReadLine();
 bool repeat = true;
 
+Console.WriteLine("");
+
 
 while (repeat){
     Console.WriteLine($"Hello {user1.Name}, what calculation or task would you like to do today?");
