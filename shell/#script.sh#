@@ -1,4 +1,4 @@
-# Shell code for displaying an option menu
+
 
 echo "Welcome user!"
 echo "What is your name?"
