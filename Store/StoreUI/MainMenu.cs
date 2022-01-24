@@ -25,7 +25,7 @@ namespace StoreUI
                 case "0":
                     return "Exit";
                 case "1":
-                    return "BuySnack";
+                    return "AddCostumer";
                 default:
                     Console.WriteLine("You have chosen an invalid pick");
                     return "MainMenu";
